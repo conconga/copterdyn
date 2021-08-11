@@ -15,7 +15,7 @@
 import numpy               as np
 import f1ord               as f1
 from   numpy           import dot
-from kdebug            import CKDEBUG
+from   kdebug          import CKDEBUG
 
 ###########################
 ## Forgetting Factor RLS ##
