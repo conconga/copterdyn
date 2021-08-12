@@ -104,19 +104,18 @@ if (__name__ == "__main__"):
     fig = fig + 1; pfig = plt.figure(fig); plt.clf();
     pfig.canvas.set_window_title('continuous')
 
-    plt.plot(T, log_x, T, log_y, hold=False)
+    plt.plot(T, log_x)
+    plt.plot(T, log_y)
     plt.grid(True)
 
     #---- new figure:
     fig = fig + 1; pfig = plt.figure(fig); plt.clf();
     pfig.canvas.set_window_title('theta')
 
-    plt.plot(
-            T, log_theta, 
-            plt.xlim(), (sys.b, sys.b), 'k--', 
-            plt.xlim(), (sys.c, sys.c), 'k--',
-            plt.xlim(), (-0.55, -0.55), 'k--',
-            hold=True)
+    plt.plot(T, log_theta)
+    plt.plot(plt.xlim(), (sys.b, sys.b), 'k--')
+    plt.plot(plt.xlim(), (sys.c, sys.c), 'k--')
+    plt.plot(plt.xlim(), (-0.55, -0.55), 'k--')
 
     plt.grid(True)
 
