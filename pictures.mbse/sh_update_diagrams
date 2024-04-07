@@ -1,4 +1,5 @@
 #!/bin/bash
 
-scp freecad:~/workspace-papyrus/QuadcopterModel/figuras/*.SVG .
-rm -v EPackage_*.SVG
+bestext=JPG
+scp freecad:~/workspace-papyrus/QuadcopterModel/figuras/*.${bestext} .
+rm -v EPackage_*
