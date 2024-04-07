@@ -1,0 +1,4 @@
+#!/bin/bash
+
+scp freecad:~/workspace-papyrus/QuadcopterModel/figuras/*.SVG .
+rm -v EPackage_*.SVG
