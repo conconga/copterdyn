@@ -29,3 +29,5 @@ expected to have achieved.
 
 ![Package_00_UseCases_Use_Cases.SVG](Use-Case diagram, and details on stakeholders (I myself!) needs.)
 ![Package_02_UseCases_UseCases.SVG](Use-Case diagram, and details on stakeholders (I myself!) needs.)
+![Package_00_UseCases_Use_Cases.SVG](Use-Case diagram, and details on stakeholders needs.)
+![Package_02_UseCases_UseCases.SVG](Use-Case diagram, and details on stakeholders needs.)
