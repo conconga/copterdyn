@@ -77,4 +77,20 @@ measured by radars or cameras, for instance.
 
 ## Activity: Simulate Sensors
 
-The UseCase "Simulate Sensors" is decomposed into its subfunctions.
+The UseCase "Simulate Sensors" is decomposed into its subfunctions. The main
+goal of this activity is to convert the state-vector which describes the
+dynamic system into sensor measurements, in case any sensor is installed at the
+system. For example, a classical sensor set (CSS) for navigation is composed of
+3 gyros, 3 accelerometers, and GPS. Several assumptions shall be taken, for
+instance:
+
+* the CSS is not installed precisely at the gravity center of the quadcopter;
+* the GPS data is delayed with regard to the actual dynamics;
+* the sensors are not ideal, and provide noise measurements.
+
+Due to the modularity of this model, the sensor simulation might be replaced (or simply configured) to include
+magnetic sensors, radars, cameras, and whatever is necessary for your (mine) application.
+
+The output of this activity is designed to input of the navigation.
+
+![Activity_simulate_sensors_simulate_sensors.JPG](Activity_simulate_sensors_simulate_sensors.JPG?raw=true "UseCase: simulate navigation")
