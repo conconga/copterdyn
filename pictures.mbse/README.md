@@ -20,10 +20,11 @@ reviving the project also for python 3, populating the simulation with the
 complete GNC (guidance-navigation-control) and sensing, and enhancing the
 clarity at any interface level.
 
-# mbse
+# System Of Interest
 
-The next paragraphs and respective diagrams will provide the details about the new project, and what is
-expected to have achieved.
+The next paragraphs and respective diagrams will provide the details about the
+new project, and what is expected to have achieved. The System of Interest is
+modelled using the Model Based System Engineering (MBSE) paradigm.
 
 ## use case diagram
 
@@ -94,4 +95,21 @@ whatever is necessary for your (my) application.
 The output of this activity is designed to be the input of the navigation.
 
 ![Activity_simulate_sensors_simulate_sensors.JPG](Activity_simulate_sensors_simulate_sensors.JPG?raw=true "UseCase: simulate navigation")
+
+## Functional Allocation
+
+The SysML allows the allocation of <<Activity>> as any <<Block>>, by any
+<<Block>> and <<Activity>>. This enables the modeling of reuse, as a single
+<<Activity>> might be a <<Part Property>> of multiple elements of the model.
+
+The next diagram depicts the functional allocation of the UseCases to the
+System of Interest. In addition, it shows the allocation of a new <<Activity>>:
+"manage time". This activity is intended to manage the pace of the simulation,
+continuous and discrete, and handle time events, for instance a change of
+configuration programed to happen at a particular timeslot.
+
+![Functional Allocation](functional_allocation.JPG?raw=true "System of Interest: Functional Allocation")
+
+$$ \ggg teste $$
+teste $ \lll teste $ teste
 
