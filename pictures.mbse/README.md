@@ -98,7 +98,7 @@ The output of this activity is designed to be the input of the navigation.
 
 ## Functional Allocation
 
-The SysML allows the allocation of <<Activity>> as any <<Block>>, by any
+The SysML allows the allocation of \<\<Activity>> as any \<\<Block>>, by any
 <<Block>> and <<Activity>>. This enables the modeling of reuse, as a single
 <<Activity>> might be a <<Part Property>> of multiple elements of the model.
 
@@ -108,8 +108,41 @@ System of Interest. In addition, it shows the allocation of a new <<Activity>>:
 continuous and discrete, and handle time events, for instance a change of
 configuration programed to happen at a particular timeslot.
 
-![Functional Allocation](functional_allocation.JPG?raw=true "System of Interest: Functional Allocation")
+![Functional Allocation](Package_03_FunctionalAllocation_functional_allocation.JPG?raw=true "System of Interest: Functional Allocation")
 
-$$ \ggg teste $$
-teste $ \lll teste $ teste
+# Path and Trajectory
 
+Along my career I have had several discussions where these terms appear
+sometimes interchangeably and not rarely with particular meanings. Whenever one
+asks for clarification about any of the terms, a new discussion starts and the
+original focus gets lost.
+
+I will describe in the next lines the denotation I first learnt in discussions
+with seniors and experts, and articles, which is the one I used in all my
+reports about guidance of inteligent weapons (hereafter "robots").
+
+When planning the movement of a robot, the designer will select an intermediate
+sequence of positions considering several levels of optimizations. For
+instance, the designer might weight differently these cost measures, among
+others:
+
+- traveled distance 
+- time-to-arrival
+- applicable constraints
+
+The selected sequence of positions is the **path** to have followed by the robot.
+
+An aircraft leaving São Paulo targeting London cannot flight straight due to
+the earth curvature, but along arcs over the earth surface. There is an
+uncountable number of possible arcs to serve as the flight **path**, and only one
+which is the shortest, and maybe another one which uses the minimum ammount of
+querosene seizing atmospheric winds.
+
+A vehicle leaving a mall and targeting home, 10 blocks north plus 10 blocks
+east, cannot move freely along the diagonal of the quadrilateral. It must
+instead follow specific traffic rules. In virtue of the mentioned rules, some
+**paths** will be longer than others, some faster, some nicer, some cheaper.
+
+Another nice example: recent hypersonic weapons "fly" at the borders of earth
+atmosphere. The **path** calculation considers limited payload, low drag, and
+fast reach.
