@@ -148,62 +148,22 @@ meaning.
 
 Somewhere in the brain of a robot there is a piece of math that fictiously
 imagine what the robot needs to do to satisfy an assigned mission, and the
-solution depends on the type of mission and related constrains. 
+solution has several dependencies, as the type of mission, related constrains,
+among others.
 
-When planning the movement of a robot, and having in mind the current state and
-the mission (final state), a designer will select an intermediate sequence of
-possible states that enables the robot to fulfil the mission from the current
-state.
+The **path** is the sequence of intermediate states between the current one and
+the mission, not necessarily linear due to constraints.
 
-This is what some our cellphones do for us when the mission is to go to a
-particular address, maybe another city, from the current position. A path planner
-will break down the straigh line connecting source and destiny in several intermediate
-states compliant with constraits, maybe regulations.
-
-The main take-away here is that, if the path is followed by the robot, the
-mission is supposed to be fulfilled.
-
-## Trajectory
-
-The trajectory, on the other hand, is a sequence of states that enable the
-robot to follow the path. When the robot follows the trajectory, it remains on
-the top of the track.  When the state of a robot is corrupted by noise or
-limited by constraints, it has at least two alternatives to overcome the risk
-of not satisfing the mission, either recalculating a path, or updating the
-trajectory.
-
-A very simple example of this dilema comes from autonomous driving. In this
-example, the path is a straigh line from the current position, over downtown,
-up to the target position. But along the path, the robot will face several
-crosswalks and STOP signs. Shall it recalculate the path and maybe circunvent
-downtown for each crosswalk and pedestrian? Or maybe push decelerations and
-acceleration, preventing accidents, following the regulations, protecting
-pedestrians, and following the path?
-
-Rockets, missiles, aircrafts are sensitive to wind. Despite the random behavior
-of the wind, the referred robots manage to follow the path by constantly
-updating the guiding trajectory.
-
-
-
-
-
-
-considering several levels of optimizations. For instance, the designer might
-weight differently these cost measures, among others:
-
-- traveled distance 
-- time-to-arrival
-- applicable constraints
-
-The selected sequence of positions is the **path** to have followed by the robot.
-
+This is what our cellphones do for us when the mission is to go to a particular
+address, maybe another city, from the current position. A path planner will
+break down the straigh line connecting source and destiny in several
+intermediate states compliant with constraits, maybe regulations.
 
 An aircraft leaving São Paulo targeting London cannot flight straight due to
 the earth curvature, but along arcs over the earth surface. There is an
-uncountable number of possible arcs to serve as the flight **path**, and only one
-which is the shortest, and maybe another one which uses the minimum ammount of
-querosene seizing atmospheric winds.
+uncountable number of possible arcs to serve as the flight **path**, and only
+one which is the shortest, and maybe another one which uses the minimum ammount
+of querosene seizing atmospheric winds.
 
 A vehicle leaving a mall and targeting home, 10 blocks north plus 10 blocks
 east, cannot move freely along the diagonal of the quadrilateral. It must
@@ -213,3 +173,33 @@ instead follow specific traffic rules. In virtue of the mentioned rules, some
 Another nice example: recent hypersonic weapons "fly" at the borders of earth
 atmosphere. The **path** calculation considers limited payload, low drag, and
 fast reach.
+
+The main take-away here is that, if the path is followed by the robot, the
+mission is supposed to be fulfilled.
+
+## Trajectory
+
+The **trajectory**, on the other hand, is a sequence of states that enable the
+robot to follow the path. When the robot follows the trajectory, it remains on
+the path.  When the state of a robot is corrupted by noise or limited by
+constraints, it has at least two alternatives to overcome the risk of not
+satisfing the mission, either recalculating a path, or updating the
+**trajectory**.
+
+A very simple example of this dilema comes from autonomous driving. In this
+example, the path is a straigh line from the current position, over downtown,
+up to the target position. But along the path, the robot will face several
+crosswalks and STOP signs. It might recalculate the path and maybe circunvent
+downtown for each crosswalk and pedestrian. But it can also push decelerations
+and acceleration, preventing accidents, following the regulations, protecting
+pedestrians, and following the path. In this example, the **trajectory** is the
+sequence of accelerations and decelerations that enable the vehicle to reach
+the other side of the city overcoming noise over the path.
+
+Rockets, missiles, aircrafts are sensitive to wind. Despite the random behavior
+of the wind, the referred robots manage to follow the path by constantly
+updating the guiding trajectory.
+
+Technically, the trajectory is the sequence of selected characteristics which
+are used as reference values for the dynamical behavior of the robot.
+
