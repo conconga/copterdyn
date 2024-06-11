@@ -203,3 +203,5 @@ updating the guiding trajectory.
 Technically, the trajectory is the sequence of selected characteristics which
 are used as reference values for the dynamical behavior of the robot.
 
+
+![path_trajectory.png](path_trajectory.png?raw=true "A possible path for the helicopter, and the respective trajectory for a safe landing.")
