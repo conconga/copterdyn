@@ -59,26 +59,25 @@ if (__name__ == "__main__"):
     b = np.random.randn(1,3)
     m = CMUXDEMUX([2,3])
 
-    print "a:"
-    print a
-    print 'b:'
-    print b
-    print
+    print("a:")
+    print(a)
+    print('b:')
+    print(b)
+    print ()
 
-    print "mux:"
-    print m.mux(a,b)
-    print "demux:"
-    print m.demux(m.mux(a,b))
-    print
-
+    print("mux:")
+    print(m.mux(a,b))
+    print("demux:")
+    print(m.demux(m.mux(a,b)))
+    print()
 
     del m
     m = CMUXDEMUX([2,3], True)
-    print "mux:"
-    print m.mux(a,b)
+    print("mux:")
+    print(m.mux(a,b))
 
-    print "demux:"
+    print("demux:")
     n = m.mux(a,b)
-    print m.demux(n)
+    print(m.demux(n))
 
 #====================================#

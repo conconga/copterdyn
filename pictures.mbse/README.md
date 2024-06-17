@@ -22,23 +22,20 @@ using multibody simulation concepts.
 history
 =======
 
-The quadcopter simulator is outdated, and with its first version
-completed in 2017. It was developed using Python 2.7, without any
-compatibility to any Python 3.0. This was critical in particular with
-debugging information and frame generation (animations). Additionally,
-the first implementation had other issues. For instance, while the
-simulation of the dynamics impressive, the project lacked a proper
-propeller model, and a piloting (controlling) algorithm. Moreover, the
-interfaces to any guidance inadequate.
+The quadcopter simulator is outdated, with its first version completed in 2017.
+It was developed using Python 2.7, without any compatibility to any Python 3.0.
+While the simulation of the dynamics was impressive, the project lacked a
+proper propeller model, and a piloting (controlling) algorithm.  Moreover, the
+interfaces to any guidance were inadequate.
 
 refactoring
 ===========
 
-As my career banked to systems engineering, I made a decision to reshape
-the project with some reasonable increments with the intention of
-bringing it reviving the project also for python 3, populating the
-simulation with the complete GNC (guidance-navigation-control) and
-sensing, and enhancing the clarity at any interface level.
+As my career banked to systems engineering, I made a decision to reshape the
+project with some reasonable increments with the intention of bringing it
+reviving the project also for python 3, populating the simulation with the
+complete GNC (guidance-navigation-control) and sensing, and enhancing the
+clarity at any interface level.
 
 System Of Interest
 ==================

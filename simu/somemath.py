@@ -97,7 +97,7 @@ def fn_blockskew(vec):
 def fn_separate3x1(vec):
     aux = vec.squeeze()
     N   = np.max(aux.shape)
-    return [aux[(i*3):(3*(i+1))].reshape((3,1)) for i in range(N/3)]
+    return [aux[(i*3):(3*(i+1))].reshape((3,1)) for i in range(int(N/3))]
 
 #>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>
 ##WWww=--  norm of a vector  --=wwWW##

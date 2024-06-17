@@ -302,8 +302,8 @@ class CMYQUAD(CNAVFUNC):
             T4,tau4 = self.prop4.get_FT()
             T5,tau5 = self.prop5.get_FT()
 
-            print "[T2...T5]     = [%10f %10f %10f %10f]" % (T2, T3, T4, T5)
-            print "[tau2...tau5] = [%10f %10f %10f %10f]" % (tau2, tau3, tau4, tau5)
+            print("[T2...T5]     = [{:10f} {:10f} {:10f} {:10f}]".format(T2, T3, T4, T5))
+            print("[tau2...tau5] = [{:10f} {:10f} {:10f} {:10f}]".format(tau2, tau3, tau4, tau5))
 
             # forces (T) and moments (tau) described in body 1:
             # (the minus signal is due to reaction on the body 1)
@@ -347,33 +347,33 @@ class CMYQUAD(CNAVFUNC):
                 )])
             ))
 
-            print "------------------"
-            print "u_phi = ",
-            print i[-1]
-            print "   1) ",
-            print np.sum(np.asarray([(((j in [3,4])*2)-1) for j in idx_quadrant]) * np.concatenate([j[0] for j in [tau2, tau3, tau4, tau5]]))
-            print "       tau2[0]) ",
-            print tau2[0]
-            print "       tau3[0]) ",
-            print tau3[0]
-            print "       tau4[0]) ",
-            print tau4[0]
-            print "       tau5[0]) ",
-            print tau5[0]
-            print "   2) ",
-            print np.sum([j[2]*k*np.sin(l) for (j,k,l) in zip(
+            print("------------------")
+            print("u_phi = ",)
+            print(i[-1])
+            print("   1) ",)
+            print(np.sum(np.asarray([(((j in [3,4])*2)-1) for j in idx_quadrant]) * np.concatenate([j[0] for j in [tau2, tau3, tau4, tau5]])))
+            print("       tau2[0]) ",)
+            print(tau2[0])
+            print("       tau3[0]) ",)
+            print(tau3[0])
+            print("       tau4[0]) ",)
+            print(tau4[0])
+            print("       tau5[0]) ",)
+            print(tau5[0])
+            print("   2) ",)
+            print(np.sum([j[2]*k*np.sin(l) for (j,k,l) in zip(
                     [T2, T3, T4, T5],
                     [self.PARAM['l2'], self.PARAM['l3'], self.PARAM['l4'], self.PARAM['l5']],
                     [self.PARAM['delta_2_rad'], self.PARAM['delta_3_rad'], self.PARAM['delta_4_rad'], self.PARAM['delta_5_rad']]
-                )])
-            print "       T2[2]) ",
-            print T2[2]
-            print "       T3[2]) ",
-            print T3[2]
-            print "       T4[2]) ",
-            print T4[2]
-            print "       T5[2]) ",
-            print T5[2]
+                )]))
+            print("       T2[2]) ",)
+            print(T2[2])
+            print("       T3[2]) ",)
+            print(T3[2])
+            print("       T4[2]) ",)
+            print(T4[2])
+            print("       T5[2]) ",)
+            print(T5[2])
 
             # 22 [u_tta]
             i.append(float(
@@ -385,33 +385,33 @@ class CMYQUAD(CNAVFUNC):
                 )])
             ))
 
-            print "------------------"
-            print "u_tta = ",
-            print i[-1]
-            print "   1) ",
-            print np.sum(np.asarray([(((j in [1,4])*2)-1) for j in idx_quadrant]) * np.concatenate([j[0] for j in [tau2, tau3, tau4, tau5]]))
-            print "       tau2[1]) ",
-            print tau2[1]
-            print "       tau3[1]) ",
-            print tau3[1]
-            print "       tau4[1]) ",
-            print tau4[1]
-            print "       tau5[1]) ",
-            print tau5[1]
-            print "   2) ",
-            print np.sum([-j[2]*k*np.cos(l) for (j,k,l) in zip(
+            print("------------------")
+            print("u_tta = ",)
+            print(i[-1])
+            print("   1) ",)
+            print(np.sum(np.asarray([(((j in [1,4])*2)-1) for j in idx_quadrant]) * np.concatenate([j[0] for j in [tau2, tau3, tau4, tau5]])))
+            print("       tau2[1]) ",)
+            print(tau2[1])
+            print("       tau3[1]) ",)
+            print(tau3[1])
+            print("       tau4[1]) ",)
+            print(tau4[1])
+            print("       tau5[1]) ",)
+            print(tau5[1])
+            print("   2) ",)
+            print(np.sum([-j[2]*k*np.cos(l) for (j,k,l) in zip(
                     [T2, T3, T4, T5],
                     [self.PARAM['l2'], self.PARAM['l3'], self.PARAM['l4'], self.PARAM['l5']],
                     [self.PARAM['delta_2_rad'], self.PARAM['delta_3_rad'], self.PARAM['delta_4_rad'], self.PARAM['delta_5_rad']]
-                )])
-            print "       T2[2]) ",
-            print T2[2]
-            print "       T3[2]) ",
-            print T3[2]
-            print "       T4[2]) ",
-            print T4[2]
-            print "       T5[2]) ",
-            print T5[2]
+                )]))
+            print("       T2[2]) ",)
+            print(T2[2])
+            print("       T3[2]) ",)
+            print(T3[2])
+            print("       T4[2]) ",)
+            print(T4[2])
+            print("       T5[2]) ",)
+            print(T5[2])
 
             # 23 [u_psi]
             i.append(float(
@@ -423,38 +423,38 @@ class CMYQUAD(CNAVFUNC):
                 )])
             ))
 
-            print "------------------"
-            print "u_psi = ",
-            print i[-1]
-            print "   1) "
-            print "       tau2[2]) ",
-            print tau2[2]
-            print "       tau3[2]) ",
-            print tau3[2]
-            print "       tau4[2]) ",
-            print tau4[2]
-            print "       tau5[2]) ",
-            print tau5[2]
+            print("------------------")
+            print("u_psi = ",)
+            print(i[-1])
+            print("   1) ")
+            print("       tau2[2]) ",)
+            print(tau2[2])
+            print("       tau3[2]) ",)
+            print(tau3[2])
+            print("       tau4[2]) ",)
+            print(tau4[2])
+            print("       tau5[2]) ",)
+            print(tau5[2])
 
-            print "   2) "
-            print "       T2[0]) ",
-            print T2[0]
-            print "       T3[0]) ",
-            print T3[0]
-            print "       T4[0]) ",
-            print T4[0]
-            print "       T5[0]) ",
-            print T5[0]
+            print("   2) ")
+            print("       T2[0]) ",)
+            print(T2[0])
+            print("       T3[0]) ",)
+            print(T3[0])
+            print("       T4[0]) ",)
+            print(T4[0])
+            print("       T5[0]) ",)
+            print(T5[0])
 
-            print "   3) "
-            print "       T2[1]) ",
-            print T2[1]
-            print "       T3[1]) ",
-            print T3[1]
-            print "       T4[1]) ",
-            print T4[1]
-            print "       T5[1]) ",
-            print T5[1]
+            print("   3) ")
+            print("       T2[1]) ",)
+            print(T2[1])
+            print("       T3[1]) ",)
+            print(T3[1])
+            print("       T4[1]) ",)
+            print(T4[1])
+            print("       T5[1]) ",)
+            print(T5[1])
 
             # 24..26 [rp_I]
             i += self.dynquad.calc_rp(t)[0:3,0].squeeze().tolist()
@@ -464,8 +464,8 @@ class CMYQUAD(CNAVFUNC):
             i += list(self.dynquad.get_euler_body1())
 
             # print one line with 'i' content:
-            print "si,",
-            print ' '.join(["%18.09e" % j for j in i])
+            print("si,",)
+            print(' '.join(["%18.09e" % j for j in i]))
 
 
     def gravity(self, RI2i):

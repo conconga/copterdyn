@@ -33,7 +33,7 @@ class CRECT:
             self.y = r_e[1]
             self.z = r_e[2]
         else:
-            print "ainda nao suportado!"
+            print("ainda nao suportado!")
 
     def __repr__(self):
         K = 180./mt.pi;
@@ -79,7 +79,7 @@ class CNAVFUNC:
         """
         return self.earth_a / sqrt(1.-(self.earth_e2*(sin(lat_rad)**2.0)));
 
-    def euler2Q(self, (phi, theta, psi)):
+    def euler2Q(self, euler):
         """
         Navigation -- from euler to Q.
 
@@ -88,9 +88,13 @@ class CNAVFUNC:
         : parameter : psi   [rad]
         : output    : Q4
         """
-	half_phi   = 0.5*phi;
-	half_theta = 0.5*theta;
-	half_psi   = 0.5*psi;
+        phi   = euler[0]
+        theta = euler[1]
+        psi   = euler[2]
+
+        half_phi   = 0.5*phi
+        half_theta = 0.5*theta
+        half_psi   = 0.5*psi;
 
         return np.asarray([
             (cos(half_phi)*cos(half_theta)*cos(half_psi)) + (sin(half_phi)*sin(half_theta)*sin(half_psi)),
@@ -109,12 +113,12 @@ class CNAVFUNC:
         : output   : psi   [rad]
         """
 
-	phi   = mt.atan2(2.0*((q[2]*q[3])+(q[0]*q[1])), (q[0]**2.0)-(q[1]**2.0)-(q[2]**2.0)+(q[3]**2.0));
-	psi   = mt.atan2(2.0*((q[1]*q[2])+(q[0]*q[3])), (q[0]**2.0)+(q[1]**2.0)-(q[2]**2.0)-(q[3]**2.0));
+        phi   = mt.atan2(2.0*((q[2]*q[3])+(q[0]*q[1])), (q[0]**2.0)-(q[1]**2.0)-(q[2]**2.0)+(q[3]**2.0));
+        psi   = mt.atan2(2.0*((q[1]*q[2])+(q[0]*q[3])), (q[0]**2.0)+(q[1]**2.0)-(q[2]**2.0)-(q[3]**2.0));
         try:
             theta = mt.asin(2.0*((q[0]*q[2])-(q[1]*q[3])));
         except ValueError:
-            print "ERRO: norm(Q) = %f" % np.sqrt(np.sum(q**2))
+            print("ERRO: norm(Q) = {:f}".format(np.sqrt(np.sum(q**2))))
             theta = 0;
 
         return (phi, theta, psi)
@@ -132,17 +136,17 @@ class CNAVFUNC:
 
         #q = q.squeeze();
         C = np.empty((3,3));
-	C[0,0] = (q[0]**2.0) + (q[1]**2.0) - (q[2]**2.0) - (q[3]**2.0);
-	C[0,1] = 2.0 * ((q[1]*q[2]) + (q[0]*q[3]));
-	C[0,2] = 2.0 * ((q[1]*q[3]) - (q[0]*q[2]));
+        C[0,0] = (q[0]**2.0) + (q[1]**2.0) - (q[2]**2.0) - (q[3]**2.0);
+        C[0,1] = 2.0 * ((q[1]*q[2]) + (q[0]*q[3]));
+        C[0,2] = 2.0 * ((q[1]*q[3]) - (q[0]*q[2]));
 
-	C[1,0] = 2.0 * ((q[1]*q[2]) - (q[0]*q[3]));
-	C[1,1] = (q[0]**2.0) - (q[1]**2.0) + (q[2]**2.0) - (q[3]**2.0);
-	C[1,2] = 2.0 * ((q[2]*q[3]) + (q[0]*q[1]));
+        C[1,0] = 2.0 * ((q[1]*q[2]) - (q[0]*q[3]));
+        C[1,1] = (q[0]**2.0) - (q[1]**2.0) + (q[2]**2.0) - (q[3]**2.0);
+        C[1,2] = 2.0 * ((q[2]*q[3]) + (q[0]*q[1]));
 
-	C[2,0] = 2.0 * ((q[1]*q[3]) + (q[0]*q[2]));
-	C[2,1] = 2.0 * ((q[2]*q[3]) - (q[0]*q[1]));
-	C[2,2] = (q[0]**2.0) - (q[1]**2.0) - (q[2]**2.0) + (q[3]**2.0);
+        C[2,0] = 2.0 * ((q[1]*q[3]) + (q[0]*q[2]));
+        C[2,1] = 2.0 * ((q[2]*q[3]) - (q[0]*q[1]));
+        C[2,2] = (q[0]**2.0) - (q[1]**2.0) - (q[2]**2.0) + (q[3]**2.0);
 
         return C
 
@@ -300,23 +304,23 @@ class CNAVFUNC:
 if (__name__ == "__main__"):
     g = CNAVFUNC();
 
-    print g.Rlambda(20./57)
-    print g.Rphi(30./57)
+    print(g.Rlambda(20./57))
+    print(g.Rphi(30./57))
 
     q = g.euler2Q((10./57, 20./57, -30./57))
-    print np.asarray(g.Q2euler(q))*57
+    print(np.asarray(g.Q2euler(q))*57)
 
-    print g.Q2C(q)
+    print(g.Q2C(q))
 
-    print g.Re2n(0,0)
-    print g.Re2n(1,0.9)
+    print(g.Re2n(0,0))
+    print(g.Re2n(1,0.9))
 
     geo = CGEO(10./57, -30./57, 33);
-    print geo
+    print(geo)
     rec = g.geo2rect(geo)
-    print rec
+    print(rec)
     geo = g.rect2geo(rec)
-    print geo
+    print(geo)
 
 
     #----------------------#
@@ -324,7 +328,7 @@ if (__name__ == "__main__"):
     #----------------------#
     from   scipy.integrate import odeint;
     from   numpy           import dot;
-    print
+    print()
 
     #  I: inertial frame
     #  b: body frame
@@ -341,8 +345,8 @@ if (__name__ == "__main__"):
 
     # a vector described at I:
     F = np.asarray([0,0,1]).reshape((3,1))
-    print "F = "
-    print F.T
+    print("F = ")
+    print(F.T)
 
     for t in [1,5,20,90]:
         # after t seconds, the quaternions should be:
@@ -352,8 +356,8 @@ if (__name__ == "__main__"):
 
         # and described at b:
         F_b = dot(g.Q2C(y), F)
-        print "F_b(phi = %1.03f) = [%1.03f %1.03f %1.03f]" % (
-            57.*euler[0], F_b[0], F_b[1], F_b[2])
+        print("F_b(phi = {:1.03f}) = [{:1.03f} {:1.03f} {:1.03f}]".format(
+            57.*euler[0], F_b[0], F_b[1], F_b[2]))
 
     #----------------------#
     # some convertion tests:
@@ -362,23 +366,23 @@ if (__name__ == "__main__"):
     euler = (10./57, -40./57, 163./57)
     Q     = g.euler2Q(euler)
 
-    print "euler = "
-    print np.degrees(euler)
-    print np.degrees(g.Q2euler(g.euler2Q(euler)))
+    print("euler = ")
+    print(np.degrees(euler))
+    print(np.degrees(g.Q2euler(g.euler2Q(euler))))
     euler_2 = g.Q2euler(g.C2Q(g.Q2C(g.euler2Q(euler))))
-    print np.degrees(np.asarray(euler_2))
+    print(np.degrees(np.asarray(euler_2)))
 
     #----------------------#
     # quaternion product:
     #----------------------#
 
-    print
-    print "quaternion product"
+    print()
+    print("quaternion product")
     q_a2b = g.euler2Q((-10., 33., -55.))
     q_b2c = g.euler2Q((44., -38., 77.))
-    print "C_a2c = C_b2c . Ci_a2b ="
-    print dot(g.Q2C(q_b2c), g.Q2C(q_a2b))
-    print "C(q_b2c . qa2b) ="
-    print g.Q2C(g.q1_prod_q2(q_b2c, q_a2b))
+    print("C_a2c = C_b2c . Ci_a2b =")
+    print(dot(g.Q2C(q_b2c), g.Q2C(q_a2b)))
+    print("C(q_b2c . qa2b) =")
+    print(g.Q2C(g.q1_prod_q2(q_b2c, q_a2b)))
 
 #>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>--<<..>>

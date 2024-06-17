@@ -48,15 +48,29 @@ class CFFRLS(CKDEBUG):
         y = x^T . theta
         """
 
+        for i in range(4):
+            print("pIn[{:d}] = {:1.6f};".format(i,x[i]))
+        print("ASSERT_EQ( RLS_update(&rls, {:1.6f}, pIn), rls.pTheta );".format(y))
+
+
         x = x.reshape((self.n,1))
 
         gamma       = dot(self.P, x) / (self.lbd + dot(dot(x.T, self.P),x))
+        #print("gamma")
+        #print(gamma)
         self.show_matrix_details("gamma", gamma, self.dblevel)
 
         self.theta  = self.theta + dot(gamma, y - dot(x.T, self.theta))
+        #print("theta")
+        #print(self.theta)
         self.show_matrix_details("theta", self.theta, self.dblevel)
 
+        for i in range(4):
+            print("ASSERT_NEAR( rls.pTheta[{:d}], {:1.6f}, 1e-5 );".format(i, float(self.theta[i])))
+
         self.P      = (self.P - (gamma*dot(x.T,self.P)))/self.lbd
+        #print("P")
+        #print(self.P)
         self.show_matrix_details("P", self.P, self.dblevel)
 
 
@@ -71,6 +85,7 @@ if (__name__ == "__main__"):
     a    = -15.  # pole for the transfer function:
     tmax = 2.0
     Ts   = 5e-3 # sample rate
+    Ts = 0.05
     T    = [i*Ts for i in range(int(tmax/Ts)+1)] # time vector
     sys  = f1.CF1ORD_D(a, Ts, 1) # unknown system
     rls  = CFFRLS([0.,0.,0.,0.], lbd=0.85)

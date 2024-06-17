@@ -21,7 +21,11 @@
 #====================================#
 ##WWww=--  import section: --=wwWW##
 import numpy             as np
-from   cltisatsec        import CLTISATSEC
+import importlib         as i
+
+import cltisatsec as j
+i.reload(j)
+from   cltisatsec        import CLTISATSEC_SISO, CLTISATSEC_MIMO
 
 #====================================#
 ## \brief class cprop               ##
@@ -48,17 +52,17 @@ class CPROP:
             self.dir_torque = -1.0
 
             # torque electrical for CCW (only negative):
-            self.Telet  = CLTISATSEC(qsi, wn, 0, -1e5, 1e5, -1e5, 0)  # [Nm]
+            self.Telet  = CLTISATSEC_SISO(qsi, wn, 0, -1e5, 1e5, -1e5, 0)  # [Nm]
         else:
             # torque aligned with z:
             self.dir_torque = 1.0
 
             # torque electrical for CW (only positive):
-            self.Telet  = CLTISATSEC(qsi, wn, 0, -1e5, 1e5, 0, 1e5)  # [Nm]
+            self.Telet  = CLTISATSEC_SISO(qsi, wn, 0, -1e5, 1e5, 0, 1e5)  # [Nm]
 
 
         # internal state:
-        self.state  = self.Telet.get_state_asarray()
+        self.state  = np.asarray(self.Telet.get_state())
         self.u      = 0
         self.w      = 0
 
@@ -73,13 +77,13 @@ class CPROP:
         self.w = w
 
     def pos_update(self, t, x):
-        self.Telet.pos_update(t,x)
+        #self.Telet.pos_update(t,x)
         self.state = x
 
         if False:
             Telet   = self.state[0]
             Tload   = self.w * self.Kload
-            print "Telet = %20.15e; w = %20.15e; Tload = %20.15e" % (Telet, self.w, Tload)
+            print("Telet = {:20.15f}; w = {:20.15f}; Tload = {:20.15f}".format(Telet, self.w, Tload))
 
     def get_FT(self):
         """

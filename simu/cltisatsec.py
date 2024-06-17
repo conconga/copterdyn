@@ -96,24 +96,24 @@ class CLTISATSEC_SISO:
 
 
         if (False):
-            print "x1 = ",
-            print self.x1
-            print "x2 = ",
-            print self.x2
-            print "x  = ",
-            print self.x
-            print "self.a = ",
-            print self.a
-            print "self.b = ",
-            print self.b
-            print "self.min_dxdt = ",
-            print self.min_dxdt
-            print "self.max_dxdt = ",
-            print self.max_dxdt
-            print "self.min_x = ",
-            print self.min_x
-            print "self.max_x = ",
-            print self.max_x
+            print("x1 = ",)
+            print(self.x1)
+            print("x2 = ",)
+            print(self.x2)
+            print("x  = ",)
+            print(self.x)
+            print("self.a = ",)
+            print(self.a)
+            print("self.b = ",)
+            print(self.b)
+            print("self.min_dxdt = ",)
+            print(self.min_dxdt)
+            print("self.max_dxdt = ",)
+            print(self.max_dxdt)
+            print("self.min_x = ",)
+            print(self.min_x)
+            print("self.max_x = ",)
+            print(self.max_x)
 
 
     def __str__(self):
@@ -349,7 +349,7 @@ class CLTISATSEC_MIMO:
             Out = In
 
         else:
-            print "hummm... are you sure you know what you are doing? I'm not!"
+            print("hummm... are you sure you know what you are doing? I'm not!")
             assert(False)
 
         return Out
@@ -490,7 +490,7 @@ if (__name__ == "__main__"):
             [ lti_free_buf,  lti_ratelim_buf,  lti_statelim_buf,  lti_2lim_buf, ]
         ):
 
-        print "--------  %s.." % txt
+        print("--------  %s..".format(txt))
         t0 = 0
 
         for t,u in zip(T,U):
@@ -506,7 +506,7 @@ if (__name__ == "__main__"):
             # buffer:
             lti_buf.append(lti.get_state())
 
-            print lti
+            print(lti)
 
 
     #UmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUmUm#
@@ -534,10 +534,10 @@ if (__name__ == "__main__"):
         #log_t2.append([t,u] + c.get_state().tolist())
 
         t0  = t
-        print "continuous = ",
-        print c
-        print "discrete   = ",
-        print d
+        print("continuous = ",)
+        print(c)
+        print("discrete   = ",)
+        print(d)
 
     log_t2 = np.asarray(log_t2)
 

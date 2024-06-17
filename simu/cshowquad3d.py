@@ -124,9 +124,8 @@ class cshowquad3d(CNAVFUNC):
         # only one item:
         lpos_I = fn_separate3x1(self.lpos_I_buf[idx,:])
 
-        print "=======ani frame %d=========" % idx
-        print "[%10.4f %10.4f %10.4f | %10.4f %10.4f %10.4f | %10.4f %10.4f %10.4f | %10.4f %10.4f %10.4f | %10.4f %10.4f %10.4f]" % \
-            (
+        print("=======ani frame {:d}=========".format(idx))
+        print("[{:10.4f} {:10.4f} {:10.4f} | {:10.4f} {:10.4f} {:10.4f} | {:10.4f} {:10.4f} {:10.4f} | {:10.4f} {:10.4f} {:10.4f} | {:10.4f} {:10.4f} {:10.4f}]".format( \
                 self.lpos_I_buf[idx,0],
                 self.lpos_I_buf[idx,1],
                 self.lpos_I_buf[idx,2],
@@ -142,7 +141,7 @@ class cshowquad3d(CNAVFUNC):
                 self.lpos_I_buf[idx,12],
                 self.lpos_I_buf[idx,13],
                 self.lpos_I_buf[idx,14]
-            )
+            ))
 
         # "center" body:
         r1 = lpos_I[0].squeeze()
@@ -229,7 +228,7 @@ class cshowquad3d(CNAVFUNC):
             t0 = time()
             self.update_frame(0)
             t1 = time()
-            print "time to update/generate a new frame = %1.1f[ms]" % (1000.*(t1-t0))
+            print("time to update/generate a new frame = {:1.1f}[ms]".format(1000.*(t1-t0)))
 
         """
         Makes an animation by repeatedly calling a function *func*, passing in (optional) arguments in *fargs*.
@@ -258,7 +257,7 @@ class cshowquad3d(CNAVFUNC):
             init_func=self.init
         )
 
-        print "creating animation in a .gif file..."
+        print("creating animation in a .gif file...")
         ani.save('cshowquad3d.gif', fps=10, dpi=60, writer='imagemagick')
 
 
