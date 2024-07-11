@@ -197,7 +197,7 @@ The output of this activity is designed to be the input of the navigation.
 
 The SysML allows the allocation of \<\<Activity>> as any \<\<Block>>, by any
 \<\<Block>> and \<\<Activity>>. This enables the modeling of reuse, as a single
-\<\<Activity>> might be a \<\<Part Property>> of multiple elements of the model.
+\<\<Activity>> might be a \<\<Part Property>> of multiple elements in the model.
 
 The next diagram depicts the functional allocation of the UseCases to the
 System of Interest. In addition, it shows the allocation of a new \<\<Activity>>:
