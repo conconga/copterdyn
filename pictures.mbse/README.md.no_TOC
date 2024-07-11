@@ -207,3 +207,10 @@ configuration programed to happen at a particular timeslot.
 
 ![Functional Allocation](Package_04_FunctionalAllocation_functional_allocation.JPG?raw=true "System of Interest: Functional Allocation")
 
+Now, replacing the activities allocated to the System of Interest by their
+sub-activities, and grouping the result into the first set of subsystems of the
+System of Interest, the result is depicted in the next diagram.
+
+![Package_04_FunctionalAllocation_subsystems_noname.JPG](Package_04_FunctionalAllocation_subsystems_noname.JPG?raw=true "Sub-activities allocated to sub-elements")
+
+The sybsystems are renamed harmonically based on the set of activities allocated to each of them.
