@@ -140,7 +140,7 @@ The Context-Diagram for the System-of-Interest (SoI) does not depict any
 surprises. The SoI interacts with the User at lauching of any simulation, and
 provides data to a logger, file, or disply unit.
 
-![Package_01_SystemContext_SoI_Context.JPG](Package_01_SystemContext_SoI_Context.JPG?raw=true "Context Diagram.")
+![Package_02_SystemContext_SoI_Context.JPG](Package_02_SystemContext_SoI_Context.JPG?raw=true "Context Diagram.")
 
 ## Activity: Simulate Hover
 

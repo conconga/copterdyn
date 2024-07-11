@@ -1,6 +1,6 @@
 #!/bin/bash
 
 dest=./temp
-mkdir -p ${temp}
+mkdir -p ${dest}
 git status -s | grep "\?" | grep -o "[[:graph:]]*\..*$" | grep -v "^\." | xargs -Inome mv nome ${dest} -v
 git status
