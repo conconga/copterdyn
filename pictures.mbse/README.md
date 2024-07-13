@@ -306,3 +306,7 @@ allocated to each of them.
 </tr>
 </tbody>
 </table>
+
+Einstein posited that \(E = m c^2\), but Schrödinger posited that \[
+i\hbar\frac{\partial}{\partial t} \Psi(x,t) = \left [ - \frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x,t)\right ] \Psi(x,t).
+\] Both were correct.
