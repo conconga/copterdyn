@@ -1,18 +1,28 @@
-  - [copterdyn](#copterdyn)
-  - [history](#history)
-  - [refactoring](#refactoring)
-  - [terms](#terms)
-      - [Mission](#mission)
-      - [Path and Trajectory](#path-and-trajectory)
-          - [Path](#path)
-          - [Trajectory](#trajectory)
-  - [System Of Interest](#system-of-interest)
-      - [use case diagram](#use-case-diagram)
-      - [context diagram](#context-diagram)
-      - [Activity: Simulate Hover](#activity-simulate-hover)
-      - [Activity: Perform Navigation](#activity-perform-navigation)
-      - [Activity: Simulate Sensors](#activity-simulate-sensors)
-      - [Functional Allocation](#functional-allocation)
+  - [<span class="toc-section-number">1</span> copterdyn](#copterdyn)
+  - [<span class="toc-section-number">2</span> history](#history)
+  - [<span class="toc-section-number">3</span>
+    refactoring](#refactoring)
+  - [<span class="toc-section-number">4</span> terms](#terms)
+      - [<span class="toc-section-number">4.1</span> Mission](#mission)
+      - [<span class="toc-section-number">4.2</span> Path and
+        Trajectory](#path-and-trajectory)
+          - [<span class="toc-section-number">4.2.1</span> Path](#path)
+          - [<span class="toc-section-number">4.2.2</span>
+            Trajectory](#trajectory)
+  - [<span class="toc-section-number">5</span> System Of
+    Interest](#system-of-interest)
+      - [<span class="toc-section-number">5.1</span> use case
+        diagram](#use-case-diagram)
+      - [<span class="toc-section-number">5.2</span> context
+        diagram](#context-diagram)
+      - [<span class="toc-section-number">5.3</span> Activity: Simulate
+        Hover](#activity-simulate-hover)
+      - [<span class="toc-section-number">5.4</span> Activity: Perform
+        Navigation](#activity-perform-navigation)
+      - [<span class="toc-section-number">5.5</span> Activity: Simulate
+        Sensors](#activity-simulate-sensors)
+      - [<span class="toc-section-number">5.6</span> Functional
+        Allocation](#functional-allocation)
 
 # copterdyn
 
@@ -261,52 +271,16 @@ diagram.
 The sybsystems are renamed harmonically based on the set of activities
 allocated to each of them.
 
-| old name |     new name     |
-| :------: | :--------------: |
-| Block 1  |    copterdyn     |
-| Block 2  |     piloting     |
-| Block 3  |     guidance     |
+| old name | new name         |
+| -------- | ---------------- |
+| Block 1  | copterdyn        |
+| Block 2  | piloting         |
+| Block 3  | guidance         |
 | Block 4  | sensor simulator |
-| Block 5  |     manager      |
-| Block 6  |    navigation    |
+| Block 5  | manager          |
+| Block 6  | navigation       |
+
+Renaming Blocks based on the performed activites.
 
 ![Package\_04\_FunctionalAllocation\_subsystems.JPG](Package_04_FunctionalAllocation_subsystems.JPG?raw=true
 "Sub-activities allocated to sub-elements")
-
-<table style="width:74%;">
-<caption>Sample grid table.</caption>
-<colgroup>
-<col style="width: 22%" />
-<col style="width: 22%" />
-<col style="width: 29%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fruit</th>
-<th>Price</th>
-<th>Advantages</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Bananas</td>
-<td>$1.34</td>
-<td><ul>
-<li>built-in wrapper</li>
-<li>bright color</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td>Oranges</td>
-<td>$2.10</td>
-<td><ul>
-<li>cures scurvy</li>
-<li>tasty</li>
-</ul></td>
-</tr>
-</tbody>
-</table>
-
-Einstein posited that \(E = m c^2\), but Schrödinger posited that \[
-i\hbar\frac{\partial}{\partial t} \Psi(x,t) = \left [ - \frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x,t)\right ] \Psi(x,t).
-\] Both were correct.
