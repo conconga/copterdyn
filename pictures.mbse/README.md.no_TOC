@@ -214,3 +214,13 @@ System of Interest, the result is depicted in the next diagram.
 ![Package_04_FunctionalAllocation_subsystems_noname.JPG](Package_04_FunctionalAllocation_subsystems_noname.JPG?raw=true "Sub-activities allocated to sub-elements")
 
 The sybsystems are renamed harmonically based on the set of activities allocated to each of them.
+
+<table style="margin-left: auto; margin-right: auto;">
+    <tr> <th>old name</th> <th>new name</th> </tr>
+    <tr> <td>Block 1</td> <td>copterdyn</td> </tr>
+    <tr> <td>Block 2</td> <td>piloting</td> </tr>
+    <tr> <td>Block 3</td> <td>guidance</td> </tr>
+    <tr> <td>Block 4</td> <td>sensor simulator</td> </tr>
+    <tr> <td>Block 5</td> <td>manager</td> </tr>
+    <tr> <td>Block 6</td> <td>navigation</td> </tr>
+</table>
