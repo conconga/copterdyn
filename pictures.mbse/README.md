@@ -169,7 +169,7 @@ The System-of-Interest will provide at least three services:
   - to calculate any navigation data, position, velocity and
     acceleration.
 
-![Package\_02\_UseCases\_UseCases.JPG](Package_02_UseCases_UseCases.JPG?raw=true
+![UseCases.JPG](UseCases.JPG?raw=true
 "Use-Case diagram, and details on stakeholders (I myself!) needs.")
 
 ## context diagram
@@ -178,8 +178,7 @@ The Context-Diagram for the System-of-Interest (SoI) does not depict any
 surprises. The SoI interacts with the User at lauching of any
 simulation, and provides data to a logger, file, or disply unit.
 
-![Package\_02\_SystemContext\_SoI\_Context.JPG](Package_02_SystemContext_SoI_Context.JPG?raw=true
-"Context Diagram.")
+![SoI\_Context.JPG](SoI_Context.JPG?raw=true "Context Diagram.")
 
 ## Activity: Simulate Hover
 
@@ -196,7 +195,7 @@ This Activity satisfies some requirements:
   - to enable the development of guidance laws based on configured
     missions (waypoints, abrupt structural changes (fail))
 
-![Activity\_simulate\_hover\_simulate\_hover.JPG](Activity_simulate_hover_simulate_hover.JPG?raw=true
+![simulate\_hover.JPG](simulate_hover.JPG?raw=true
 "UseCase: simulate hover")
 
 ## Activity: Perform Navigation
@@ -215,7 +214,7 @@ The modularity enables the evaluation of different concepts, like
 gyroless-navigation, or navigation supported by static reference points
 measured by radars or cameras, for instance.
 
-![Activity\_perform\_navigation\_perform\_navigation.JPG](Activity_perform_navigation_perform_navigation.JPG?raw=true
+![perform\_navigation.JPG](perform_navigation.JPG?raw=true
 "UseCase: perform navigation")
 
 ## Activity: Simulate Sensors
@@ -239,7 +238,7 @@ cameras, and whatever is necessary for your (my) application.
 The output of this activity is designed to be the input of the
 navigation.
 
-![Activity\_simulate\_sensors\_simulate\_sensors.JPG](Activity_simulate_sensors_simulate_sensors.JPG?raw=true
+![simulate\_sensors.JPG](simulate_sensors.JPG?raw=true
 "UseCase: simulate navigation")
 
 ## Functional Allocation
@@ -256,8 +255,7 @@ pace of the simulation, continuous and discrete, and handle time events,
 for instance a change of configuration programed to happen at a
 particular timeslot.
 
-![Functional
-Allocation](Package_04_FunctionalAllocation_functional_allocation.JPG?raw=true
+![Functional Allocation](functional_allocation.JPG?raw=true
 "System of Interest: Functional Allocation")
 
 Now, replacing the activities allocated to the System of Interest by
@@ -265,7 +263,7 @@ their sub-activities, and grouping the result into the first set of
 subsystems of the System of Interest, the result is depicted in the next
 diagram.
 
-![Package\_04\_FunctionalAllocation\_subsystems\_noname.JPG](Package_04_FunctionalAllocation_subsystems_noname.JPG?raw=true
+![FunctionalAllocation\_subsystems\_noname.JPG](FunctionalAllocation_subsystems_noname.JPG?raw=true
 "Sub-activities allocated to sub-elements")
 
 The sybsystems are renamed harmonically based on the set of activities
@@ -282,5 +280,5 @@ allocated to each of them.
 
 Renaming Blocks based on the performed activites.
 
-![Package\_04\_FunctionalAllocation\_subsystems.JPG](Package_04_FunctionalAllocation_subsystems.JPG?raw=true
+![subsystems.JPG](subsystems.JPG?raw=true
 "Sub-activities allocated to sub-elements")
