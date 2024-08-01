@@ -1,0 +1,36 @@
+#!/bin/bash
+
+readme=README.md.before_pandoc
+lstused=list_of_used_pictures
+lstpics=list_of_pictures_in_the_folder
+lstnotgit=list_of_pictures_not_versioned
+
+###########################
+## list of used pictures ##
+###########################
+cat ${readme} | grep "^[[:blank:]]*\!\[.*(.*?" | sed 's/^.*](//;s/?.*$//' > ${lstused}
+
+####################################
+## list of pictures in the folder ##
+####################################
+ls -1 | while read nome; do
+    [[ -f "${nome}" ]] && [[ `file "${nome}" | grep -c "image"` -gt 0 ]] && echo "${nome}"
+done > ${lstpics}
+
+#################################################
+## list of pictures out of git version-control ##
+#################################################
+git status -s . | grep "^??" | sed 's/^??[[:blank:]]\+//' | while read nome; do
+    [[ -f "${nome}" ]] && [[ `file "${nome}" | grep -c "image"` -gt 0 ]] && echo "${nome}"
+done > ${lstnotgit}
+
+################################
+## set manipulation => python ##
+################################
+python3 pictures.py -u "${lstused}" -p "${lstpics}" -n "${lstnotgit}"
+
+#################
+## cleaning up ##
+#################
+
+rm -fv ${lstused} ${lstpics} ${lstnotgit}
