@@ -207,6 +207,8 @@ configuration programed to happen at a particular timeslot.
 
 ![Functional Allocation](functional_allocation.JPG?raw=true "System of Interest: Functional Allocation")
 
+## System Decomposition
+
 Now, replacing the activities allocated to the System of Interest by their
 sub-activities, and grouping the result into the first set of subsystems of the
 System of Interest, the result is depicted in the next diagram.
