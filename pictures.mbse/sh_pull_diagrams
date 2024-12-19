@@ -1,5 +1,5 @@
 #!/bin/bash
 
 bestext=JPG
-scp freecad:~/workspace-papyrus/QuadcopterModel/figuras/*.${bestext} .
+scp oldfreecad:~/workspace-papyrus/QuadcopterModel/figuras/*.${bestext} .
 rm -v EPackage_*
